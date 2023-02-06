@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;700&family=Roboto:ital,wght@0,900;1,100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="canonical" href="https://torelli.github.io/calculator/" />
+    <link rel="manifest" href="/calculator/manifest.webmanifest">
+</head>
+<body>
+    <nav id="desktop-nav" class="container-fluid nav">
+        <ul>
+            <li>
+                <hgroup>    
+                    <h1>Calculator</h1>
+                    <h2>By <a href="https://github.com/Derickcodem" target=”_blank” alt="Check out my GitHub!" data-tooltip="Check out my GitHub!" data-placement="bottom">John Derick Ambat</a></h2>
+                </hgroup>
+            </li>
+        </ul>
+        <ul>
+            <li><a class="contrast" id="theme-btn" data-tooltip="Turn off dark mode" data-placement="left"><i class="fa-solid fa-circle-half-stroke"></i></a></li>
+        </ul>
+    </nav>
+    <main class="container-fluid calculator-container">
+        <article class="calculator">
+            <nav id="calculator-nav" class="container-fluid">
+                <ul>
+                    <li><a href="https://github.com/Derickcodem" class="contrast" data-tooltip="Visit my GitHub!" data-placement="right"><i class="fa-brands fa-github"></i></a></li>
+                </ul>
+            </nav>
+            <div id="display-container" class="display-container">
+                <div id="display"></div>
+                <p id="realtime-display"></p>
+            </div>
+            <div class="button-container">
+                <div class="main-keys">
+                    <div class="btn-special-container">
+                        <button class="btn-special" id="clear">C</button>
+                        <button class="btn-special" id="pos-neg">+/-</button>
+                        <button class="operator btn-special" data-tooltip="Remainder" data-placement="top" id="modulus">%</button>
+                    </div>
+                    <div class="keys">
+                        <button class="key" id="btn9">9</button>
+                        <button class="key" id="btn8">8</button>
+                        <button class="key" id="btn7">7</button>
+                        <button class="key" id="btn6">6</button>
+                        <button class="key" id="btn5">5</button>
+                        <button class="key" id="btn4">4</button>
+                        <button class="key" id="btn3">3</button>
+                        <button class="key" id="btn2">2</button>
+                        <button class="key" id="btn1">1</button>
+                        <button class="key" id="dot">.</button>
+                        <button class="key" id="btn0">0</button>
+                        <button class="key" id="delete"><i class="fa-solid fa-arrow-left"></i></button>
+                    </div>
+                </div>
+                <div class="operator-container">
+                    <button class="operator" id="multiply">×</button>
+                    <button class="operator" id="divide">÷</button>
+                    <button class="operator" id="subtract">-</button>
+                    <button class="operator" id="add">+</button>
+                    <button class="operator" id="equals">=</button>
+                </div>
+            </div>
+        </article>
+    </main>
+    <script>
+        if (navigator.serviceWorker) {
+          navigator.serviceWorker.register (
+            '/calculator/sw.js',
+            {scope: '/calculator/'}
+          )
+        }
+    </script>
+    <script src="https://kit.fontawesome.com/eb34185c6d.js" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
